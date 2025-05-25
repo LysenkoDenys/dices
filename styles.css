@@ -1,0 +1,117 @@
+:root {
+  --color-primary: #1e293b;
+  --color-footer-hover: #2b00ff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #b0bbc6 0%, #5289d1 100%);
+  color: var(--color-primary);
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  line-height: 1.6;
+}
+
+#navbar {
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 50px;
+  position: fixed;
+  background-color: var(--color-primary);
+  backdrop-filter: blur(10px);
+  opacity: 0.85;
+  z-index: 1000;
+}
+
+#navbar ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  justify-content: center;
+}
+
+#navbar a {
+  list-style: none;
+  position: relative;
+  display: inline-block;
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+#navbar a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 0;
+  height: 3px;
+  background-color: var(--color-footer-hover);
+  transition: width 0.4s ease-in-out;
+}
+
+#navbar a:hover::after {
+  width: 100%;
+}
+
+#navbar a:hover,
+#footer a:hover {
+  color: var(--color-footer-hover);
+  transition: color 0.3s ease;
+}
+
+@media only screen and (max-width: 768px) {
+  #navbar {
+    height: auto;
+  }
+
+  #navbar ul {
+    padding: 0;
+  }
+
+  #navbar ul li {
+    font-size: 0.5rem;
+  }
+}
+
+#footer {
+  min-height: 50px;
+  background-color: var(--color-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+#footer ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  justify-content: center;
+}
+
+#footer ul li a {
+  list-style: none;
+  color: white;
+  font-size: 1.5rem;
+}
+
+#footer ul li a:hover {
+  color: #2b00ff;
+  transition: color 0.3s ease;
+}
